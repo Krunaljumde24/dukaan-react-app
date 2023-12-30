@@ -1,12 +1,13 @@
-footer{
-    background-color: rgb(232, 232, 232);
-    position: absolute;
+footer {
+    background-color: #252525;
+    position: relative;
     bottom: 0;
     width: 100%;
     padding-top: 30px;
+    color: white;
 }
 
-img {
+.logo {
     width: 50px;
 }
 
@@ -14,13 +15,15 @@ ul {
     list-style: none;
 }
 
-.footer-container{
+.footer-container {
     display: flex;
     justify-content: space-around;
 }
-.footer-container > div{
+
+.footer-container>div {
     width: 250px;
 }
-footer > p{
+
+footer>p {
     text-align: center;
 }

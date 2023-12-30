@@ -1,0 +1,40 @@
+.login-container {
+  height: 500px;
+}
+
+.login-form {
+  border: 1px solid #FF8800;
+  width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  display: flex;
+}
+
+.login-left-img {
+  width: 280px;
+  justify-self: baseline;
+}
+
+.login-left{
+  background-color: rgb(244, 244, 244);
+}
+
+.login-right{
+  background-color: rgb(255, 184, 102);
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 30px;
+}
+
+.login-left,
+.login-right {
+  width: 300px;
+}
+
+.login-right > input {
+  border-radius: 50px;
+    border: 1px solid black;
+
+}

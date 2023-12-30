@@ -1,5 +1,7 @@
 import React, { useContext } from 'react'
 import AuthContext from '../../context/AuthContext'
+
+import groceryImg from '../../../public/grocery-img.png'
 import './home.css'
 function Home() {
 
@@ -7,7 +9,15 @@ function Home() {
 
     return (
         <div className='landing-page'>
-            <h2>Welcome, User</h2>
+            <div className="row">
+                <div className="home-left col-lg-5">
+                    <h1>One place for all your groceries!</h1>
+                    <button type='button' className='btn btn-lg btn-success my-4'>Shop Now</button>
+                </div>
+                <div className="home-right col">
+                    <img src={groceryImg} alt="grovery_image" />
+                </div>
+            </div>
         </div>
     )
 }

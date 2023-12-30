@@ -1,7 +1,8 @@
 
 
 body {
-  background-color: rgb(195, 230, 231);
   font-family: 'Ubuntu', sans-serif;
   font-size: 18px;
+
+  transition: 2;
 }

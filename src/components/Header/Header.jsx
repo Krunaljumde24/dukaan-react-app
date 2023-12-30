@@ -3,19 +3,23 @@ import './header.css'
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../../../public/icons8-react-80.png'
 
-import loginLogo from '../../../public/icons8-login-32.png'
+import loginLogo from '../../../public/login-icon.png'
+
+import dukaanLogo from '../../../public/dukaan-logo.png'
+import cartIcon from '../../../public/cart-icon.png'
+import favIcon from '../../../public/favorite-icon.png'
 
 function Header() {
 
     let navigate = useNavigate();
     return (
-        <nav className="navbar navbar-expand-sm">
+        <nav className="navbar navbar-expand-sm bg-light">
             <div className="container">
                 <Link to="/" className="nav-link">
-                    <img src={logo} alt="logo" />
+                    <img src={dukaanLogo} className='logo' alt="logo" />
                 </Link>
                 <Link to="/" className="nav-link">
-                    <h4>LoGo</h4>
+                    <h4>Dukaan</h4>
                 </Link>
                 <div className="navbar-collapse" >
                     <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
@@ -32,7 +36,15 @@ function Header() {
                             <Link to="/login" className='nav-link'>Login</Link>
                         </li>
                     </ul>
-                    <img src={loginLogo} alt="login_logo" />
+                    <div>
+
+
+                        <img src={favIcon} className='side-icon' alt="cart_icon" />
+                        <img src={cartIcon} className='side-icon' alt="cart_icon" />
+                        <Link to="/login">
+                            <img src={loginLogo} className='side-icon' alt="login_logo" />
+                        </Link>
+                    </div>
                 </div>
             </div>
         </nav >

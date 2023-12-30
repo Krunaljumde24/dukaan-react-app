@@ -7,7 +7,10 @@ import Home from "./components/Home/Home";
 import About from './components/About/About'
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import Contact from "./components/contact/Contact";
-import Login from "./components/Login/Login";
+import Login from "./components/common/auth/Login/Login";
+import SignUp from './components/common/auth/SignUp/SignUp'
+import Test from './components/Test'
+
 import AuthContextProvider from "./context/AuthContextProvider";
 
 const router = createBrowserRouter(
@@ -17,6 +20,7 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
       <Route path="login" element={<Login />} />
+      <Route path="signup" element={<SignUp />} />
     </Route>
   )
 )
