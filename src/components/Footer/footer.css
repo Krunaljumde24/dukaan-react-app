@@ -1,0 +1,26 @@
+footer{
+    background-color: rgb(232, 232, 232);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 30px;
+}
+
+img {
+    width: 50px;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-around;
+}
+.footer-container > div{
+    width: 250px;
+}
+footer > p{
+    text-align: center;
+}
