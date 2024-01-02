@@ -1,8 +1,15 @@
 import React from 'react'
+import Home from './Home/Home'
+import About from './About/About'
+import Contact from './contact/Contact'
 
 function LandingPage() {
     return (
-        <div>LandingPage</div>
+        <div>
+            <Home />
+            <About />
+            <Contact />
+        </div>
     )
 }
 

@@ -37,8 +37,6 @@ function Header() {
                         </li>
                     </ul>
                     <div>
-
-
                         <img src={favIcon} className='side-icon' alt="cart_icon" />
                         <img src={cartIcon} className='side-icon' alt="cart_icon" />
                         <Link to="/login">
