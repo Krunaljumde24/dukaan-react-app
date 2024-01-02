@@ -10,7 +10,7 @@ function Footer() {
                 <div className="site-details">
                     <h5>
                         <img src={logo} className='logo' alt="logo" />
-                        LoGo
+                        Dukaan
                     </h5>
                     <p>
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit.
