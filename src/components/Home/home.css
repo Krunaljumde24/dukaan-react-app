@@ -1,8 +1,14 @@
 .landing-page {
-    height: 500px;
+    /* height: 0px; */
     background-color: rgb(255, 184, 102);
     padding: 50px;
+    padding-bottom: 0px;
 }
+
+.grocery-img {
+    width: 430px;
+}
+
 
 h1 {
     font-weight: bolder;
@@ -16,4 +22,14 @@ h1 {
 
 .home-right {
     text-align: right;
+}
+
+.custom-card {
+    text-align: center;
+}
+
+.custom-card-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px;
 }

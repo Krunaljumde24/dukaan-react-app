@@ -13,7 +13,7 @@ function Footer() {
                         Dukaan
                     </h5>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        One online shop for all you daily groceries.
                     </p>
                 </div>
 
