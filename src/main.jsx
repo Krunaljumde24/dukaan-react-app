@@ -12,15 +12,17 @@ import SignUp from './components/common/auth/SignUp/SignUp'
 import Test from './components/Test'
 
 import AuthContextProvider from "./context/AuthContextProvider";
+import Shop from "./components/Shop/Shop";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />} errorElement={<PageNotFound />}>
-      <Route path="" element={<Home />}  />
+      <Route path="" element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<SignUp />} />
+      <Route path="shop" element={<Shop />} />
     </Route>
   )
 )

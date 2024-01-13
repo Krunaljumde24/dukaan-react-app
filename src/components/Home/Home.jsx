@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import AuthContext from '../../context/AuthContext'
 
 import groceryImg from '../../../public/grocery-img.png'
 import './home.css'
