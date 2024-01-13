@@ -1,20 +1,22 @@
 import React, { useContext, useState } from 'react'
-import AuthContext from '../../../../context/AuthContext'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
+
 import './login.css'
 
 import loginImg from '../../../../../public/Fingerprint-pana.png'
+import AuthContext from '../../../../context/AuthContext'
 
 function Login() {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-    const { login, logout } = useContext(AuthContext);
+    const { login, loggedInUser } = useContext(AuthContext);
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        login(username, password);
+        login(username, password)
+        console.log(username + ' | ' + password);
     }
 
     const handleChange = (e) => {
@@ -28,6 +30,7 @@ function Login() {
 
     return (
         <div className="login-container">
+            {loggedInUser && <Navigate to="/shop" replace={true} />}
             <div className='login-form'>
                 <div className="login-left">
                     <img src={loginImg} className='login-left-img' alt="login_image" />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './header.css'
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../../../public/icons8-react-80.png'
@@ -9,10 +9,18 @@ import dukaanLogo from '../../../public/dukaan-logo.png'
 import cartIcon from '../../../public/cart-icon.png'
 import favIcon from '../../../public/favorite-icon.png'
 import SearchBar from '../SearchBar/SearchBar'
+import AuthContext from '../../context/AuthContext'
 
 function Header() {
 
     let navigate = useNavigate();
+
+    const { loggedInUser, logout } = useContext(AuthContext)
+
+    let handleLogout = () => {
+        logout();
+    }
+
     return (
         <nav className="navbar navbar-expand-sm bg-light">
             <div className="container">
@@ -22,7 +30,7 @@ function Header() {
                 <Link to="/" className="nav-link">
                     <h4>Dukaan</h4>
                 </Link>
-                <Link to="/products" className='nav-link mx-3'>
+                <Link to="/shop" className="mx-3 nav-link">
                     <h6>Shop</h6>
                 </Link>
                 <div className="navbar-collapse" >
@@ -40,7 +48,7 @@ function Header() {
                             <Link to="/contact" className='nav-link'>Contact</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/login" className='nav-link'>Login</Link>
+                            {loggedInUser ? <Link to="/" className='nav-link' onClick={handleLogout}>Logout</Link> : <Link to="/login" className='nav-link'>Login</Link>}
                         </li>
                     </ul> */}
                     <div>

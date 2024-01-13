@@ -3,23 +3,24 @@ import AuthContext from './AuthContext'
 
 function AuthContextProvider({ children }) {
 
-    const [user, setUser] = useState(null);
+    const [loggedInUser, setLoggedInUser] = useState()
 
-    const login = (username, password) => {
+
+    let login = (username, password) => {
         if (username === 'admin' && password === 'admin') {
-            setUser('admin');
+            setLoggedInUser(username)
         }
     }
 
-    const logout = () => {
-        setUser(null)
+    let logout = () => {
+        setLoggedInUser()
     }
 
     return (
-        <AuthContext.Provider value={{ user, setUser, login, logout }}>
+        <AuthContext.Provider value={{ login, loggedInUser, logout }}>
             {children}
         </AuthContext.Provider>
     )
 }
 
-export default AuthContextProvider;
+export default AuthContextProvider

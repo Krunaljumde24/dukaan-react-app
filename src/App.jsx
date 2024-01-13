@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import AuthContextProvider from './context/AuthContextProvider'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import { Outlet } from 'react-router-dom'
