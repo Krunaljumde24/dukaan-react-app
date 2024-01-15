@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import './signup.css'
 
-import signSideImg from '../../../../../public/Fingerprint-cuate.png'
+import signSideImg from '../../../../assets/Fingerprint-cuate.png'
 
 
 function SignUp() {

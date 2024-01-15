@@ -3,7 +3,7 @@ import { Link, Navigate } from 'react-router-dom'
 
 import './login.css'
 
-import loginImg from '../../../../../public/Fingerprint-pana.png'
+import loginImg from '../../../../assets/Fingerprint-pana.png'
 import AuthContext from '../../../../context/AuthContext'
 
 function Login() {

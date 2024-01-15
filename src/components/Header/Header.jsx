@@ -1,18 +1,13 @@
 import React, { useContext } from 'react'
 import './header.css'
 import { Link, useNavigate } from 'react-router-dom'
-import logo from '../../../public/icons8-react-80.png'
-
-import loginLogo from '../../../public/login-icon.png'
-
-import dukaanLogo from '../../../public/dukaan-logo.png'
-import cartIcon from '../../../public/cart-icon.png'
-import favIcon from '../../../public/favorite-icon.png'
+import loginLogo from '../../assets/login-icon.png'
+import dukaanLogo from '../../assets/dukaan-logo.png'
+import cartIcon from '../../assets/cart-icon.png'
+import favIcon from '../../assets/favorite-icon.png'
 import AuthContext from '../../context/AuthContext'
 
 function Header() {
-
-    let navigate = useNavigate();
 
     const { loggedInUser, logout } = useContext(AuthContext)
 

@@ -1,4 +1,11 @@
-#shop{
-    height: 400px;
-    background-color: brown;
+#shop {
+    /* height: 400px; */
+    /* background-color: brown; */
+}
+
+
+.productCardContainer {
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: space-evenly; */
 }

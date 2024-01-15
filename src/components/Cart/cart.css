@@ -1,0 +1,14 @@
+.section {
+
+    min-height: 450px;
+    padding-top: 20px;
+
+}
+
+.cart-items {
+    left: 0;
+}
+
+.pricing {
+    right: 0;
+}

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-import groceryImg from '../../../public/grocery-img.png'
+import groceryImg from '../../assets/grocery-img.png'
 import './home.css'
 function Home() {
 

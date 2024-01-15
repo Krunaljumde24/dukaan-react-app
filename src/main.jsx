@@ -13,6 +13,7 @@ import Test from './components/Test'
 
 import AuthContextProvider from "./context/AuthContextProvider";
 import Shop from "./components/Shop/Shop";
+import Cart from "./components/Cart/Cart";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,6 +24,8 @@ const router = createBrowserRouter(
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<SignUp />} />
       <Route path="shop" element={<Shop />} />
+      <Route path="cart" element={<Cart />} />
+
     </Route>
   )
 )

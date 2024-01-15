@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../../public/dukaan-logo.png'
+import logo from '../../assets/dukaan-logo.png'
 import { Link } from 'react-router-dom'
 import './footer.css'
 
