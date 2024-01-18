@@ -6,6 +6,7 @@ import dukaanLogo from '../../assets/dukaan-logo.png'
 import cartIcon from '../../assets/cart-icon.png'
 import favIcon from '../../assets/favorite-icon.png'
 import AuthContext from '../../context/AuthContext'
+import { ProductContext } from '../../context/ProductContext'
 
 function Header() {
 
@@ -15,6 +16,7 @@ function Header() {
         logout();
     }
 
+    const { cartItemCount } = useContext(ProductContext);
     return (
         <nav className="navbar navbar-expand-sm bg-light">
             <div className="container">
@@ -25,7 +27,7 @@ function Header() {
                     <h4>Dukaan</h4>
                 </Link>
                 <Link to="/shop" className="mx-3 nav-link">
-                    <h6>Shop</h6>
+                    <h6 className='navLinkShop'>Shop</h6>
                 </Link>
                 <div className="navbar-collapse" >
                     <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
@@ -43,11 +45,26 @@ function Header() {
                         </li>
                     </ul>
                     <div>
-                        <img src={favIcon} className='side-icon' alt="cart_icon" />
-                        <img src={cartIcon} className='side-icon' alt="cart_icon" />
-                        <Link to="/login">
-                            <img src={loginLogo} className='side-icon' alt="login_logo" />
-                        </Link>
+                        <span className='side-icon position-relative'>
+                            <img src={favIcon} alt="cart_icon" className='side-icon-img' />
+                            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                {/* {0} */}
+                            </span>
+                        </span>
+                        <span className='side-icon position-relative'>
+                            <Link to="/cart">
+                                <img src={cartIcon} alt="cart_icon" className='side-icon-img' />
+                            </Link>
+                            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                {cartItemCount()}
+                            </span>
+                        </span>
+                        <span className='side-icon'>
+                            <Link to="/login">
+                                <img src={loginLogo} alt="login_logo" className='side-icon-img' />
+                            </Link>
+                        </span>
+
                     </div>
                 </div>
             </div>

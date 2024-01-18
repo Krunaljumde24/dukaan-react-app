@@ -12,6 +12,7 @@ import SignUp from './components/common/auth/SignUp/SignUp'
 import Test from './components/Test'
 
 import AuthContextProvider from "./context/AuthContextProvider";
+import { ProductContextProvider } from "./context/ProductContext";
 import Shop from "./components/Shop/Shop";
 import Cart from "./components/Cart/Cart";
 
@@ -34,7 +35,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <AuthContextProvider>
-      <RouterProvider router={router} />
+      <ProductContextProvider>
+        <RouterProvider router={router} />
+      </ProductContextProvider>
     </AuthContextProvider>
   </React.StrictMode>
 );

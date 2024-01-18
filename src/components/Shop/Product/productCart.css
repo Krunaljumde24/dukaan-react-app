@@ -5,6 +5,8 @@
 
 .card {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #ffe3ab;
+
 }
 
 .product-card-img {
@@ -22,8 +24,17 @@ small {
     text-decoration: line-through;
 }
 
-.add-to-cart-btn {
+.add-to-cart-btn,
+.remove-from-cart-btn {
     color: white;
     font-weight: bold;
+}
+
+.add-to-cart-btn {
     background-color: blueviolet;
+}
+
+.selectError {
+    font-size: 10px;
+    color: red;
 }

@@ -17,3 +17,13 @@ h1 {
 .home-right {
     text-align: right;
 }
+
+#shopNowBtn {
+    background-color: blueviolet;
+    color: white;
+
+}
+
+/* button>.showNowBtn {
+    color: red;
+} */

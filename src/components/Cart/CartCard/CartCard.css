@@ -40,10 +40,14 @@
 .plus,
 .countInput {
     width: 35px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     border: 1px solid black;
     margin-left: 10px;
     font-size: 20px;
+}
+
+.countInput{
+    max-width: fit-content;
 }
 
 .quantity {
@@ -59,4 +63,14 @@
     background-color: white;
     color: #8553FA;
     border: 1px solid #8553FA;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type=number]{
+    text-align: center;
 }

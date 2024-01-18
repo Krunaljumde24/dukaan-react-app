@@ -11,7 +11,7 @@ function Home() {
             <div className="row">
                 <div className="home-left col-lg-5">
                     <h1>One place for all your groceries!</h1>
-                    <button type='button' className='btn btn-lg btn-success my-4'>Shop Now</button>
+                    <button type='button' id='shopNowBtn' className='btn btn-lg  my-4'>Shop Now</button>
                 </div>
                 <div className="home-right col">
                     <img src={groceryImg} alt="grovery_image" />
