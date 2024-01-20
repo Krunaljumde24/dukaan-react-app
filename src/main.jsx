@@ -12,9 +12,9 @@ import SignUp from './components/common/auth/SignUp/SignUp'
 import Test from './components/Test'
 
 import AuthContextProvider from "./context/AuthContextProvider";
-import { ProductContextProvider } from "./context/ProductContext";
 import Shop from "./components/Shop/Shop";
 import Cart from "./components/Cart/Cart";
+import { ProductContextProvider } from "./context/ProductContext";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -26,6 +26,7 @@ const router = createBrowserRouter(
       <Route path="signup" element={<SignUp />} />
       <Route path="shop" element={<Shop />} />
       <Route path="cart" element={<Cart />} />
+      <Route path="/test" element={<Test />} />
 
     </Route>
   )

@@ -9,7 +9,7 @@ function ProductCard(props) {
     const [item, setItem] = useState('-');
     let [selErr, setSelErr] = useState(false);
 
-    const { addProductToTheList, productDetailsList, removeProductFromListById } = useContext(ProductContext);
+    const { addItemToCart } = useContext(ProductContext);
 
     let handleAddBtn = (event, props) => {
         if (item == '-') {
@@ -28,7 +28,7 @@ function ProductCard(props) {
                 pricePerKiloGram: props.productDiscountedPrice,
                 totalPrice: totalPrice
             }
-            addProductToTheList(productDetails)
+            addItemToCart(productDetails);
             toast.success('Product Added!')
             setRemoveBtn(true)
             setItem('-')

@@ -1,32 +1,32 @@
-import { createContext, useState } from "react";
+import React, { useState } from 'react'
+import { createContext } from "react";
 
 const ProductContext = createContext();
 
-
-import React from 'react'
-
 function ProductContextProvider({ children }) {
 
-    const [productDetailsList, setProductDetailsList] = useState([])
+    const [cartItemList, setCartItemList] = useState([]);
 
-    let addProductToTheList = (product) => {
-        setProductDetailsList((prev) => [...prev, product])
-    }
-    let cartItemCount = () => {
-        return productDetailsList.length
+    const [searchText, setSearchText] = useState('');
+
+    let addItemToCart = (item) => {
+        setCartItemList((prev) => [...prev, item])
     }
 
-    let removeProductFromListById = (id) => {
-        setProductDetailsList(productDetailsList.filter((item) => {
-            return !(item.id === id)
-        }))
+    let getCartItemCount = () => {
+        return cartItemList.length;
+    }
+
+    let updateSearchText = (text) => {
+        setSearchText(text)
     }
 
     return (
-        <ProductContext.Provider value={{ addProductToTheList, productDetailsList, cartItemCount, removeProductFromListById }}>
+        <ProductContext.Provider value={{ addItemToCart, getCartItemCount, cartItemList, searchText, updateSearchText }}>
             {children}
         </ProductContext.Provider>
     )
 }
+
 
 export { ProductContext, ProductContextProvider }

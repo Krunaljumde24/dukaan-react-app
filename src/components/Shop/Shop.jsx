@@ -3,7 +3,6 @@ import './shop.css'
 import AuthContext from '../../context/AuthContext'
 import { Navigate } from 'react-router-dom'
 import ProductCard from './Product/ProductCard'
-import Sidebar from '../Sidebar/Sidebar.jsx'
 import vegetables from './Product/Vegetables.js'
 import { ProductContext } from '../../context/ProductContext.jsx'
 
@@ -13,19 +12,24 @@ function Shop() {
 
     const commonImgPath = '/src/assets/Vegetables/';
 
-    const { productDetailsList } = useContext(ProductContext);
+    const { searchText } = useContext(ProductContext)
+
+    const filteredVegetables = vegetables.filter((vege) => {
+        return vege.productName.toLowerCase().includes(searchText.toLowerCase());
+    })
 
     return (
         <>
-            {/* {!loggedInUser && <Navigate to="/login" replace={true} />} */}
+            {!loggedInUser && <Navigate to="/login" replace={true} />}
 
             <div className="row">
                 <div className="col-2 shop-sidebar">
-                    1
+                    Sidebar
                 </div>
                 <div className="col">
+                    <p className='my-2'>Showing {filteredVegetables.length} of {vegetables.length} Vegetables</p>
                     <div id='shop' className='row'>
-                        {vegetables.map((veg) =>
+                        {filteredVegetables.map((veg) =>
                             <ProductCard
                                 className='col'
                                 key={veg.productId}

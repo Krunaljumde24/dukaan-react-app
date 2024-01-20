@@ -1,24 +1,23 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import './cartPricing.css'
-import { ProductContext } from '../../../context/ProductContext'
+import { ProductContext } from '../../../context/ProductContext';
 
 function CartPricing() {
 
-
-    const { productDetailsList } = useContext(ProductContext);
+    const { cartItemList } = useContext(ProductContext)
 
     let totalPrice = 0;
-    productDetailsList.map((prod) => {
-        totalPrice += prod.totalPrice;
-    })
 
+    cartItemList.map((prod) => {
+        totalPrice += prod.totalPrice
+    })
 
     return (
 
         <div className='cart-pricing'>
             <h4><u>Pricing</u></h4>
-            {productDetailsList.length != 0 ?
+            {cartItemList.length != 0 ?
                 <table className="table">
                     <thead>
                         <tr>
@@ -30,10 +29,10 @@ function CartPricing() {
                         </tr>
                     </thead>
                     <tbody>
-                        {productDetailsList.map((product) => {
+                        {cartItemList.map((product) => {
                             return (
                                 <tr key={product.productId}>
-                                    <th scope="row">{productDetailsList.indexOf(product) + 1}</th>
+                                    <th scope="row">{cartItemList.indexOf(product) + 1}</th>
                                     <td>{product.id}</td>
                                     <td>{product.name}</td>
                                     <td>{product.quantity} {product.quantityType}</td>

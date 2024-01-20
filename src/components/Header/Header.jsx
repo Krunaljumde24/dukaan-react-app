@@ -11,12 +11,12 @@ import { ProductContext } from '../../context/ProductContext'
 function Header() {
 
     const { loggedInUser, logout } = useContext(AuthContext)
+    const { getCartItemCount, searchText, updateSearchText } = useContext(ProductContext);
 
     let handleLogout = () => {
         logout();
     }
 
-    const { cartItemCount } = useContext(ProductContext);
     return (
         <nav className="navbar navbar-expand-sm bg-light">
             <div className="container">
@@ -44,6 +44,19 @@ function Header() {
                             {loggedInUser ? <Link to="/" className='nav-link' onClick={handleLogout}>Logout</Link> : <Link to="/login" className='nav-link'>Login</Link>}
                         </li>
                     </ul>
+                    {loggedInUser
+                        &&
+                        <div className="search-input">
+                            <input
+                                type="text"
+                                className='form-control'
+                                placeholder='search'
+                                value={searchText}
+                                onChange={(event) => updateSearchText(event.target.value)}
+                            />
+                        </div>
+                    }
+
                     <div>
                         <span className='side-icon position-relative'>
                             <img src={favIcon} alt="cart_icon" className='side-icon-img' />
@@ -56,7 +69,7 @@ function Header() {
                                 <img src={cartIcon} alt="cart_icon" className='side-icon-img' />
                             </Link>
                             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                {cartItemCount()}
+                                {getCartItemCount()}
                             </span>
                         </span>
                         <span className='side-icon'>
