@@ -1,4 +1,5 @@
-.about-container {
-    height: 350px;
-    background-color: cornflowerblue;
+.about-container > p {
+    font-size: 12px;
+    /* height: 350px; */
+    /* background-color: cornflowerblue; */
 }
