@@ -29,17 +29,22 @@ function Login() {
         ) {
           toast.success("Welcome " + data.username + " to Dukaan");
           setLoggedInUser(data.username);
+        } else if (resp.code == "ERR_BAD_REQUEST") {
+          toast.error("Failed to login.");
         }
-        console.log(resp);
       })
       .catch((err) => {
-        if (err) console.log(err);
+        if (err) {
+          toast.error(err.response.data)
+          console.log(err);
+        }
       });
   };
 
   return (
     <div className="login-container">
       {loggedInUser && <Navigate to="/shop" replace={true} />}
+
       <div className="login-form">
         <div className="login-left">
           <img src={loginImg} className="login-left-img" alt="login_image" />
