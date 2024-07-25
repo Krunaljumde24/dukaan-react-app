@@ -1,0 +1,15 @@
+.parent{
+    border: 1px solid black;
+    min-width: 450px;
+    background-color: lightgreen;
+}
+
+.child {
+    height: 200px;
+    width: 220px;
+    background-color: rgb(201, 144, 255);
+    border: 1px solid black;
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}

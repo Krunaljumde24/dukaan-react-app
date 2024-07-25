@@ -1,22 +1,42 @@
-import React from 'react'
+import React, { useState } from "react";
+import "./test.css";
 
-let testStyle = {
-    height: '400px'
-}
 function Test() {
-    return (
-        <div style={testStyle}>
-            <br /><br />
-            <button type='button' className='btn btn-lg btn-primary position-relative'>Button
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    99+
-                </span>
-            </button>
+  let [foodName, setFoodName] = useState("Saboodana ki Khichdi");
 
+  let changeFoodItemName = (food) => {
+    setFoodName(food);
+  };
 
+  return (
+    <div className="container parent">
+      <h4>Parent Component</h4>
+      <p>Default -- Saboodana ki Khichdi</p>
+      <p>Chamged -- {foodName}</p>
+      <Child item={foodName} />
 
-        </div>
-    )
+      <Child changeFoodItemName={changeFoodItemName} />
+    </div>
+  );
 }
 
-export default Test
+let Child = (props) => {
+  let foodName = "Tarri Poha";
+
+  let btnClick = () => {
+    props.changeFoodItemName(foodName);
+  };
+
+  return (
+    <div className="child">
+      <h4>Child Component</h4>
+      <p>{props.item ? props.item : foodName}</p>
+      <button className="btn btn-sm btn-success" onClick={btnClick}>
+        Click
+      </button>
+      <p>Click above button to send this value to parent Component</p>
+    </div>
+  );
+};
+
+export default Test;
