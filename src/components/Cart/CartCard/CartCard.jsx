@@ -1,7 +1,7 @@
 import React from 'react'
 import './CartCard.css'
 
-import vegetables from '../../Shop/Product/Vegetables';
+import vegetables from '../../Shop/Product/vegetables.js';
 
 function CartCard() {
 
