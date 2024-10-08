@@ -1,5 +1,5 @@
 import React from 'react'
-import './cartCard.css'
+import './CartCard.css'
 
 import vegetables from '../../Shop/Product/Vegetables';
 
