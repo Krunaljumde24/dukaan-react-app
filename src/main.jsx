@@ -15,6 +15,7 @@ import Contact from "./components/contact/Contact";
 import Login from "./components/common/auth/Login/Login";
 import SignUp from "./components/common/auth/SignUp/SignUp";
 import Test from "./components/Test";
+import Test2 from "./components/Test2";
 
 import AuthContextProvider from "./context/AuthContextProvider";
 import Shop from "./components/Shop/Shop";
@@ -25,6 +26,8 @@ import AdminPortal from "./components/Admin Related/AdminPortal/AdminPortal";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />} errorElement={<PageNotFound />}>
+      <Route path="/upload" element={<Test2 />} />
+
       <Route path="" element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
@@ -34,6 +37,7 @@ const router = createBrowserRouter(
       <Route path="cart" element={<Cart />} />
       <Route path="/test" element={<Test />} />
       <Route path="/adminPortal" element={<AdminPortal />} />
+
     </Route>
   )
 );

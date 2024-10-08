@@ -8,6 +8,9 @@ import { ProductContext } from "../../context/ProductContext.jsx";
 import axios from "axios";
 
 function Shop() {
+
+  let API_BASE_URI = import.meta.env.VITE_API_BASE_URL;
+
   const { loggedInUser } = useContext(AuthContext);
 
   const commonImgPath = "/src/assets/Vegetables/";
@@ -18,7 +21,7 @@ function Shop() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/getVegtableDetails")
+      .get(`${API_BASE_URI}/getVegtableDetails`)
       .then((resp) => {
         setVegetables(resp.data);
       })

@@ -8,6 +8,9 @@ import signSideImg from "../../../../assets/Fingerprint-cuate.png";
 import axios from "axios";
 
 function SignUp() {
+
+  const baseAPIUrl = import.meta.env.VITE_API_BASE_URL;
+
   const [signUp, setSignUp] = useState(false);
 
   const {
@@ -17,8 +20,9 @@ function SignUp() {
   } = useForm();
 
   let signupBtnClick = (data) => {
+
     axios
-      .post("http://localhost:8080/signup", {
+      .post(`${baseAPIUrl}/signup`, {
         username: data.username,
         password: data.password,
         email: data.email,

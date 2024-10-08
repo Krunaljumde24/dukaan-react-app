@@ -1,14 +1,16 @@
 import axios from "axios";
 
 let addProductToDatabase = (data) => {
+  let API_BASE_URI = import.meta.env.VITE_API_BASE_URL;
+
   let type = data.productType;
   let url = "";
   switch (type) {
     case "vegetable":
-      url = "http://localhost:8080/addVegetable";
+      url = `${API_BASE_URI}/addVegetable`;
       break;
     case "fruit":
-      url = "http://localhost:8080/addFruit";
+      url = `${API_BASE_URI}/addFruit`;
       break;
     default:
       break;
