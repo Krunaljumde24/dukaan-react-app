@@ -3,7 +3,6 @@ import "./shop.css";
 import AuthContext from "../../context/AuthContext";
 import { Navigate } from "react-router-dom";
 import ProductCard from "./Product/ProductCard";
-// import vegetables from './Product/Vegetables.js'
 import { ProductContext } from "../../context/ProductContext.jsx";
 import axios from "axios";
 
@@ -12,8 +11,6 @@ function Shop() {
   let API_BASE_URI = import.meta.env.VITE_API_BASE_URL;
 
   const { loggedInUser } = useContext(AuthContext);
-
-  const commonImgPath = "/src/assets/Vegetables/";
 
   const { searchText } = useContext(ProductContext);
 
@@ -52,7 +49,7 @@ function Shop() {
                 key={veg.productId}
                 productId={veg.productId}
                 productName={veg.productName}
-                productImageUrl={commonImgPath + veg.productImageName}
+                productImageUrl={veg.productImageUrl}
                 productActualPrice={veg.productActualPrice}
                 productDiscountedPrice={veg.productDiscountedPrice}
                 productQuantityType={veg.productQuantityType}
